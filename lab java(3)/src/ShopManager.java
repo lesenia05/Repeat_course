@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-        import java.util.Comparator;
-        import java.util.LinkedList;
-        import java.util.List;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ShopManager {
 
@@ -10,9 +10,9 @@ public class ShopManager {
 
     private List<Goods> availableGoods = new ArrayList<>();
 
-    public List<Goods> findGoodsByMaterial(List<Goods> goods, String material) {
+    public List<Goods> findGoodsByMaterial(List<Goods> availableGoods, String material) {
         List<Goods> result = new LinkedList<>();
-        for (Goods good : goods) {
+        for (Goods good : availableGoods) {
             if (good.getMaterial() == material) {
                 result.add(good);
             }
@@ -20,9 +20,9 @@ public class ShopManager {
         return result;
     }
 
-    public List<Goods> findGoodsByPrice(double price) {
+    public List<Goods> findGoodsByPrice(List<Goods> list, double price) {
         List<Goods> result = new LinkedList<>();
-        for (Goods good : availableGoods) {
+        for (Goods good : availableGoods ) {
             if (good.getPrice() < price) {
                 result.add(good);
             }
@@ -30,12 +30,12 @@ public class ShopManager {
         return result;
     }
 
-    public void sortByLength(List<Goods> goods) {
-        goods.sort(Comparator.comparing(Goods::getName));
+    public void sortByLength(List<Goods> availableGoods) {
+        availableGoods.sort(Comparator.comparing(Goods::getName));
     }
 
-    public void sortByWidth(List<Goods> goods) {
-        goods.sort(Comparator.comparing(Goods::getName));
+    public void sortByWidth(List<Goods> availableGoods) {
+        availableGoods.sort(Comparator.comparing(Goods::getName));
     }
 
     public String getName() {

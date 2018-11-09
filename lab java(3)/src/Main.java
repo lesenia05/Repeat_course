@@ -22,7 +22,7 @@ public class Main {
                 });
                 break;
             case 2:
-                pharmacyManager.findGoodsByPrice(50.0D).forEach((good) -> {
+                pharmacyManager.findGoodsByPrice(1000.0D).forEach((good) -> {
                     System.out.println(good.toString());
                 });
                 break;
