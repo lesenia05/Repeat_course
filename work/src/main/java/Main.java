@@ -6,10 +6,10 @@ public class Main {
 
     public static void main(String[] args) {
         ShopManager shopManager = new ShopManager();
-        shopManager.getAvailableGoods().add(new Bath("Bath1","ceramics",1000,PLUMBING));
-        shopManager.getAvailableGoods().add(new Pan("Pan1","aluminum",200,DISHES));
-        shopManager.getAvailableGoods().add(new Sofa("Sofa1","suede",4000,FURNITURE));
-        shopManager.getAvailableGoods().add(new Lamp("Lamp1","glass",90,LIGHTING));
+        shopManager.getAvailableGoods().add(new Bath("Bath1","ceramics",1000,200,150,CategoryType.PLUMBING,100));
+        shopManager.getAvailableGoods().add(new Pan("Pan1","aluminum",200,20, 30,CategoryType.DISHES,5));
+        shopManager.getAvailableGoods().add(new Sofa("Sofa1","suede",300,200,2000,CategoryType.FURNITURE,"folding"));
+        shopManager.getAvailableGoods().add(new Lamp("Lamp1","glass",800,30,5,CategoryType.LIGHTING,"electro"));
 
 
         System.out.println("Menu: \n1. Show all available goods\n2. Show goods at a price\n3. Sort by length\n4. Sort by width\n5.Show goods at a material ");
@@ -17,31 +17,30 @@ public class Main {
         int userChoice = scanner.nextInt();
         switch(userChoice) {
             case 1:
-                pharmacyManager.getAvailableGoods().forEach((good) -> {
+                shopManager.getAvailableGoods().forEach((good) -> {
                     System.out.println(good.toString());
                 });
                 break;
             case 2:
-                pharmacyManager.findGoodsByPrice(50.0D).forEach((good) -> {
+                shopManager.findGoodsByPrice(shopManager.getAvailableGoods(),1000).forEach((good) -> {
                     System.out.println(good.toString());
                 });
                 break;
             case 3:
-                pharmacyManager.sortByLength(pharmacyManager.getAvailableGoods());
-                pharmacyManager.getAvailableGoods().forEach((good) -> {
+                shopManager.sortByLength(shopManager.getAvailableGoods());
+                shopManager.getAvailableGoods().forEach((good) -> {
                     System.out.println(good.toString());
                 });
                 break;
             case 4:
-                pharmacyManager.sortByWidth(pharmacyManager.getAvailableGoods());
-                pharmacyManager.getAvailableGoods().forEach((good) -> {
+                shopManager.sortByWidth(shopManager.getAvailableGoods());
+                shopManager.getAvailableGoods().forEach((good) -> {
                     System.out.println(good.toString());
                 });
             case 5:
-                pharmacyManager.findGoodsByMaterial(shopManager.getAvailableGoods(), Material"cast iron").forEach((good) -> {
+                shopManager.findGoodsByMaterial(shopManager.getAvailableGoods(),"cast iron").forEach((good) -> {
                     System.out.println(good.toString());
                 });
         }
-
     }
 }

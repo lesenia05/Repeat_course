@@ -27,8 +27,8 @@ public class Customer {
         this.availableMoney = availableMoney;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Customer{" +
                 "necessaryGoods='" + necessaryGoods + '\'' +
                 ", availableMoney=" + availableMoney +

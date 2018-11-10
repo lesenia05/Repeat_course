@@ -1,8 +1,8 @@
 public class Pan extends Goods {
     private double volume;
 
-    public Pan(String name,String material, double price, CategoryType categoryType, int volume) {
-        super(name, material, price, categoryType);
+    public Pan(String name,String material, double price,int length, int width, CategoryType categoryType, int volume) {
+        super(name, material, price,length, width, categoryType);
         this.volume = volume;
     }
 
@@ -14,8 +14,8 @@ public class Pan extends Goods {
         this.volume = volume;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Pan{" +
                 "volume=" + volume +
                 '}';

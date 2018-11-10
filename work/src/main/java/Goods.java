@@ -2,12 +2,17 @@ public class Goods {
     private String name;
     private String material;
     private double price;
+    private int length;
+    private int width;
     private CategoryType categoryType;
 
-    public Goods(String name, String material, double price, CategoryType categoryType) {
+
+    public Goods(String name, String material, double price, int length, int width, CategoryType categoryType) {
         this.name = name;
         this.material = material;
         this.price = price;
+        this.length = length;
+        this.width=width;
         this.categoryType = categoryType;
     }
 
@@ -35,6 +40,22 @@ public class Goods {
         this.price = price;
     }
 
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
     public CategoryType getCategoryType() {
         return categoryType;
     }
@@ -43,12 +64,18 @@ public class Goods {
         this.categoryType = categoryType;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Goods{" +
                 "name='" + name + '\'' +
+                ", material='" + material + '\'' +
                 ", price=" + price +
+                ", length=" + length +
+                ", width=" + width +
                 ", categoryType=" + categoryType +
                 '}';
     }
 }
+
+
+
